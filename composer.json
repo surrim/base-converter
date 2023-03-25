@@ -1,0 +1,26 @@
+{
+  "name": "surrim/base-converter",
+  "description": "Encodes and decodes numbers in all possible number systems, including YouTube-IDs and self invented ones",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Surrim\\BaseConverter\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "surrim",
+      "email": "root@surrim.org",
+      "homepage": "https://surrim.org"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "ext-gmp": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10"
+  }
+}
