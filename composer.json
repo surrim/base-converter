@@ -3,11 +3,6 @@
   "description": "Encodes and decodes numbers in all possible number systems, including YouTube-IDs and self invented ones",
   "type": "library",
   "license": "MIT",
-  "autoload": {
-    "psr-4": {
-      "Surrim\\BaseConverter\\": "src/"
-    }
-  },
   "authors": [
     {
       "name": "surrim",
@@ -15,6 +10,11 @@
       "homepage": "https://surrim.org"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "Surrim\\BaseConverter\\": "src/"
+    }
+  },
   "minimum-stability": "stable",
   "require": {
     "ext-gmp": "*",

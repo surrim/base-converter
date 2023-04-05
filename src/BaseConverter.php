@@ -15,7 +15,7 @@ class BaseConverter {
     const BASE64_RFC4648_5 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
 
     public static function transcode(string $encoded, string $sourceAlphabet, string $targetAlphabet): ?string {
-        $decoded = static::decode($encoded, $sourceAlphabet);
+        $decoded = self::decode($encoded, $sourceAlphabet);
         if ($decoded === null) {
             return null;
         }
@@ -23,7 +23,7 @@ class BaseConverter {
     }
 
     public static function decode(string $encoded, string $alphabet): ?string {
-        [$base, $alphabetChars] = static::decodeAlphabet($alphabet);
+        [$base, $alphabetChars] = self::decodeAlphabet($alphabet);
         $encodedChars = mb_str_split($encoded);
         $encodedSize = count($encodedChars);
         if ($base < 2 || $encodedSize === 0 || ($encodedSize > 1 && $encodedChars[0] === $alphabetChars[0])) {
@@ -49,7 +49,7 @@ class BaseConverter {
     }
 
     public static function encode(GMP|string|int $decoded, string $alphabet): ?string {
-        [$base, $alphabetChars] = static::decodeAlphabet($alphabet);
+        [$base, $alphabetChars] = self::decodeAlphabet($alphabet);
         $decodedNumber = gmp_init($decoded);
         if ($base < 2 || $decodedNumber < 0) {
             return null;
